@@ -87,9 +87,12 @@ String reply = MCEngineArtificialIntelligenceApi.getApi()
     <pre>public String getPlayerToken(String playerUuid, String platform) {
     return db.getPlayerToken(playerUuid, platform);
 }</pre>
-    <h3>Usage</h3>
+    <h3>Usage (Normal)</h3>
     <pre>String token = MCEngineArtificialIntelligenceApi.getApi()
     .getPlayerToken("uuid-1234", "openai");</pre>
+    <h3>Usage (CustomUrl)</h3>
+    <pre>String token = MCEngineArtificialIntelligenceApi.getApi()
+    .getPlayerToken("uuid-1234", "customurl:{server name}");</pre>
     <h3>Summary</h3>
     <div class="summary">Retrieves a player's stored token from the database for a specific platform.</div>
   </div>
@@ -105,9 +108,12 @@ String reply = MCEngineArtificialIntelligenceApi.getApi()
     <pre>public void registerModel(String platform, String model) {
     MCEngineArtificialIntelligenceApiUtilAi.registerModel(plugin, platform, model);
 }</pre>
-    <h3>Usage</h3>
+    <h3>Usage (Normal)</h3>
     <pre>MCEngineArtificialIntelligenceApi.getApi()
-    .registerModel("customurl", "myserver:gpt-neo");</pre>
+    .registerModel("openai", "gpt-4o");</pre>
+    <h3>Usage (CustomUrl)</h3>
+    <pre>MCEngineArtificialIntelligenceApi.getApi()
+    .registerModel("customurl", "{server name}:{model name}");</pre>
     <h3>Summary</h3>
     <div class="summary">Registers a model so that it can be used to process prompts.</div>
   </div>
@@ -124,9 +130,12 @@ String reply = MCEngineArtificialIntelligenceApi.getApi()
     <pre>public IMCEngineArtificialIntelligenceApiModel getAi(String platform, String model) {
     return MCEngineArtificialIntelligenceApiUtilAi.getAi(platform, model);
 }</pre>
-    <h3>Usage</h3>
+    <h3>Usage (Normal)</h3>
     <pre>IMCEngineArtificialIntelligenceApiModel model = MCEngineArtificialIntelligenceApi.getApi()
     .getAi("openai", "gpt-3.5-turbo");</pre>
+    <h3>Usage (CustomUrl)</h3>
+    <pre>IMCEngineArtificialIntelligenceApiModel model = MCEngineArtificialIntelligenceApi.getApi()
+    .getAi("customurl", "{server name}:{model name}");</pre>
     <h3>Summary</h3>
     <div class="summary">Fetches the AI model object registered under a specific platform and name.</div>
   </div>
@@ -245,8 +254,10 @@ String reply = MCEngineArtificialIntelligenceApi.getApi()
     <pre>public String getPlayerToken(String playerUuid, String platform) {
     return db.getPlayerToken(playerUuid, platform);
 }</pre>
-    <h3>Usage</h3>
+    <h3>Usage (Normal)</h3>
     <pre>String token = MCEngineArtificialIntelligenceApi.getApi().getPlayerToken("uuid-1234", "openai");</pre>
+    <h3>Usage (CustomUrl)</h3>
+    <pre>String token = MCEngineArtificialIntelligenceApi.getApi().getPlayerToken("uuid-1234", "customurl:{server name}");</pre>
     <h3>Summary</h3>
     <div class="summary">Returns the stored token for the given player and platform.</div>
   </div>
