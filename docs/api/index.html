@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,256 +10,116 @@
   <h1>MCEngine Artificial Intelligence API Usage</h1>
 
   <div class="api-box">
-    <h2>getResponse(String platform, String model, String message)</h2>
+    <h2>registerModel(Plugin plugin, String platform, String model)</h2>
     <div class="comment">/**
-     * Gets a direct response from the AI using a registered model.
-     * @param platform The AI platform.
-     * @param model    The model name.
-     * @param message  The prompt to send.
-     * @return The AI response.
-     * Using Server Token.
+     * Registers a model under a given platform if not already loaded.
      */</div>
     <h3>API Code</h3>
-    <pre>
-public String getResponse(String platform, String model, String message) {
-    return getAi(platform, model).getResponse(message);
-}
-    </pre>
-    <h3>Usage (Normal)</h3>
-    <pre>
-String reply = MCEngineArtificialIntelligenceApi.getApi()
-    .getResponse("openai", "gpt-3.5-turbo", "Hello, AI!");
-    </pre>
-    <h3>Usage (CustomUrl)</h3>
-    <pre>
-String reply = MCEngineArtificialIntelligenceApi.getApi()
-    .getResponse("customurl", "{server name}:{model name}", "Hello, AI!");
-    </pre>
-    <h3>Summary</h3>
-    <div class="summary">
-      Calls a registered AI model with a prompt and gets a response string.
-    </div>
-  </div>
-
-  <div class="api-box">
-    <h2>getResponse(String platform, String model, String token, String message)</h2>
-    <div class="comment">/**
-     * Gets a direct response from the AI using a provided token.
-     * @param platform The AI platform.
-     * @param model    The model name.
-     * @param token    The API key or personal token.
-     * @param message  The prompt to send.
-     * @return The AI response.
-     * Using Player Token.
-     */</div>
-    <h3>API Code</h3>
-    <pre>
-public String getResponse(String platform, String model, String token, String message) {
-    return getAi(platform, model).getResponse(token, message);
-}
-    </pre>
-    <h3>Usage (Normal)</h3>
-    <pre>
-String reply = MCEngineArtificialIntelligenceApi.getApi()
-    .getResponse("openrouter", "custom-model", "my-secret-token", "What's the weather?");
-    </pre>
-    <h3>Usage (CustomUrl)</h3>
-    <pre>
-String reply = MCEngineArtificialIntelligenceApi.getApi()
-    .getResponse("customurl", "{server name}:{model name}", "my-secret-token", "What's the weather?");
-    </pre>
-    <h3>Summary</h3>
-    <div class="summary">
-      Sends a message to an AI model using Player token and returns the response.
-    </div>
-  </div>
-
-  <div class="api-box">
-    <h2>getPlayerToken(String playerUuid, String platform)</h2>
-    <div class="comment">/**
- * Retrieves a stored token for a given player and platform.
- * @param playerUuid The UUID of the player.
- * @param platform   The platform name.
- * @return The encrypted token or null if not found.
- */</div>
-    <h3>API Code</h3>
-    <pre>public String getPlayerToken(String playerUuid, String platform) {
-    return db.getPlayerToken(playerUuid, platform);
-}</pre>
-    <h3>Usage (Normal)</h3>
-    <pre>String token = MCEngineArtificialIntelligenceApi.getApi()
-    .getPlayerToken("uuid-1234", "openai");</pre>
-    <h3>Usage (CustomUrl)</h3>
-    <pre>String token = MCEngineArtificialIntelligenceApi.getApi()
-    .getPlayerToken("uuid-1234", "customurl:{server name}");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Retrieves a player's stored token from the database for a specific platform.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>registerModel(String platform, String model)</h2>
-    <div class="comment">/**
- * Registers a model under a given platform if not already loaded.
- * @param platform Platform name (e.g., "openai", "customurl").
- * @param model    Model name or server:model if custom.
- */</div>
-    <h3>API Code</h3>
-    <pre>public void registerModel(String platform, String model) {
+    <pre>public void registerModel(Plugin plugin, String platform, String model) {
     MCEngineArtificialIntelligenceApiUtilAi.registerModel(plugin, platform, model);
 }</pre>
-    <h3>Usage (Normal)</h3>
-    <pre>MCEngineArtificialIntelligenceApi.getApi()
-    .registerModel("openai", "gpt-4o");</pre>
-    <h3>Usage (CustomUrl)</h3>
-    <pre>MCEngineArtificialIntelligenceApi.getApi()
-    .registerModel("customurl", "{server name}:{model name}");</pre>
+    <h3>Usage</h3>
+    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
+api.registerModel(plugin, "openai", "gpt-4o");</pre>
     <h3>Summary</h3>
     <div class="summary">Registers a model so that it can be used to process prompts.</div>
   </div>
 
   <div class="api-box">
+    <h2>getResponse(String platform, String model, String message)</h2>
+    <div class="comment">/** Sends message using registered model and returns response */</div>
+    <h3>API Code</h3>
+    <pre>public String getResponse(String platform, String model, String message) {
+    return getAi(platform, model).getResponse(message);
+}</pre>
+    <h3>Usage</h3>
+    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
+String reply = api.getResponse("openai", "gpt-3.5-turbo", "Hello, AI!");</pre>
+    <h3>Summary</h3>
+    <div class="summary">Gets a direct AI response using server-registered token.</div>
+  </div>
+
+  <div class="api-box">
+    <h2>getResponse(String platform, String model, String token, String message)</h2>
+    <div class="comment">/** Sends message using provided token and returns response */</div>
+    <h3>API Code</h3>
+    <pre>public String getResponse(String platform, String model, String token, String message) {
+    return getAi(platform, model).getResponse(token, message);
+}</pre>
+    <h3>Usage</h3>
+    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
+String reply = api.getResponse("openrouter", "custom-model", "my-token", "How's the weather?");</pre>
+    <h3>Summary</h3>
+    <div class="summary">Gets AI response using provided player token.</div>
+  </div>
+
+  <div class="api-box">
     <h2>getAi(String platform, String model)</h2>
-    <div class="comment">/**
- * Retrieves an AI model by platform and model name.
- * @param platform The platform name.
- * @param model    The model name.
- * @return The model interface or null if not registered.
- */</div>
+    <div class="comment">/** Retrieves a registered model by platform and name */</div>
     <h3>API Code</h3>
     <pre>public IMCEngineArtificialIntelligenceApiModel getAi(String platform, String model) {
     return MCEngineArtificialIntelligenceApiUtilAi.getAi(platform, model);
 }</pre>
-    <h3>Usage (Normal)</h3>
-    <pre>IMCEngineArtificialIntelligenceApiModel model = MCEngineArtificialIntelligenceApi.getApi()
-    .getAi("openai", "gpt-3.5-turbo");</pre>
-    <h3>Usage (CustomUrl)</h3>
-    <pre>IMCEngineArtificialIntelligenceApiModel model = MCEngineArtificialIntelligenceApi.getApi()
-    .getAi("customurl", "{server name}:{model name}");</pre>
+    <h3>Usage</h3>
+    <pre>IMCEngineArtificialIntelligenceApiModel model = new MCEngineArtificialIntelligenceApi().getAi("openai", "gpt-4");</pre>
     <h3>Summary</h3>
-    <div class="summary">Fetches the AI model object registered under a specific platform and name.</div>
+    <div class="summary">Returns the model instance or null if not found.</div>
   </div>
 
   <div class="api-box">
     <h2>getAiAll()</h2>
-    <div class="comment">/**
-    * Gets all registered AI models mapped by platform and model name.
-    *
-    * @return A nested map of platform -> model -> model instance.
-    */</div>
+    <div class="comment">/** Returns all registered models */</div>
     <h3>API Code</h3>
-    <pre>
-  public Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; getAiAll() {
-      //noinspection unchecked
-      return (Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt;) (Map&lt;?, ?&gt;)
-          MCEngineArtificialIntelligenceApiUtilAi.getAllModels();
-  }
-    </pre>
+    <pre>public Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; getAiAll() {
+    return (Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt;) (Map&lt;?, ?&gt;)
+        MCEngineArtificialIntelligenceApiUtilAi.getAllModels();
+}</pre>
     <h3>Usage</h3>
-    <pre>
-  Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; allModels =
-      MCEngineArtificialIntelligenceApi.getApi().getAiAll();
-
-  for (String platform : allModels.keySet()) {
-      System.out.println("Platform: " + platform);
-      for (String model : allModels.get(platform).keySet()) {
-          System.out.println(" - Model: " + model);
-      }
-  }
-    </pre>
+    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
+Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; allModels = api.getAiAll();</pre>
     <h3>Summary</h3>
-    <div class="summary">
-      Retrieves all available AI models grouped by platform and model name.<br />
-      Useful for listing or debugging registered models in the system.
-    </div>
+    <div class="summary">Retrieves all models by platform and model name.</div>
   </div>
 
   <div class="api-box">
-    <h2>getApi()</h2>
-    <div class="comment">/**
- * Gets the global API singleton instance.
- * @return The MCEngineArtificialIntelligenceApi instance.
- */</div>
+    <h2>runBotTask(...)</h2>
+    <div class="comment">/** Runs an async bot task for the player */</div>
     <h3>API Code</h3>
-    <pre>public static MCEngineArtificialIntelligenceApi getApi() {
-    return instance;
+    <pre>public void runBotTask(Plugin plugin, IMCEngineArtificialIntelligenceDB db, Player player, String tokenType, String platform, String model, String message) {
+    new MCEngineArtificialIntelligenceApiUtilBotTask(plugin, this, db, tokenType, player, platform, model, message)
+        .runTaskAsynchronously(plugin);
 }</pre>
     <h3>Usage</h3>
-    <pre>MCEngineArtificialIntelligenceApi api = MCEngineArtificialIntelligenceApi.getApi();</pre>
+    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
+api.runBotTask(plugin, db, player, "player", "openai", "gpt-4", "Tell me a joke");</pre>
     <h3>Summary</h3>
-    <div class="summary">Retrieves the global instance of the AI API class.</div>
+    <div class="summary">Triggers a bot task using the player’s or server’s token depending on type.</div>
   </div>
 
   <div class="api-box">
-    <h2>getPlugin()</h2>
-    <div class="comment">/**
- * Gets the Bukkit plugin instance linked to this API.
- * @return The plugin instance.
- */</div>
+    <h2>setWaiting(Player player, boolean waiting)</h2>
+    <div class="comment">/** Sets whether player is waiting for AI response */</div>
     <h3>API Code</h3>
-    <pre>public Plugin getPlugin() {
-    return plugin;
+    <pre>public void setWaiting(Player player, boolean waiting) {
+    MCEngineArtificialIntelligenceApiUtilBotManager.setWaiting(player, waiting);
 }</pre>
     <h3>Usage</h3>
-    <pre>Plugin plugin = MCEngineArtificialIntelligenceApi.getApi().getPlugin();</pre>
+    <pre>api.setWaiting(player, true);</pre>
     <h3>Summary</h3>
-    <div class="summary">Returns the Bukkit plugin associated with this API.</div>
+    <div class="summary">Tracks whether a player is waiting for AI response.</div>
   </div>
 
   <div class="api-box">
-    <h2>getDB()</h2>
-    <div class="comment">/**
- * Gets the database handler implementation.
- * @return The database API implementation.
- */</div>
+    <h2>checkWaitingPlayer(Player player)</h2>
+    <div class="comment">/** Checks if a player is in waiting state */</div>
     <h3>API Code</h3>
-    <pre>public IMCEngineArtificialIntelligenceApiDatabase getDB() {
-    return db;
+    <pre>public boolean checkWaitingPlayer(Player player) {
+    return MCEngineArtificialIntelligenceApiUtilBotManager.isWaiting(player);
 }</pre>
     <h3>Usage</h3>
-    <pre>IMCEngineArtificialIntelligenceApiDatabase db = MCEngineArtificialIntelligenceApi.getApi().getDB();</pre>
+    <pre>boolean waiting = api.checkWaitingPlayer(player);</pre>
     <h3>Summary</h3>
-    <div class="summary">Returns the database handler used to store and retrieve player tokens.</div>
+    <div class="summary">Checks if player is waiting for a previous response.</div>
   </div>
-
-  <div class="api-box">
-    <h2>checkUpdate(String gitPlatform, String org, String repository, String token)</h2>
-    <div class="comment">/**
- * Checks for updates by querying the specified Git platform.
- * Logs to console if a new version is available.
- * @param gitPlatform The platform to query ("github" or "gitlab").
- * @param org         The organization or user.
- * @param repository  The repository name.
- * @param token       The access token (nullable).
- */</div>
-    <h3>API Code</h3>
-    <pre>public void checkUpdate(String gitPlatform, String org, String repository, String token) {
-    MCEngineArtificialIntelligenceApiUtilUpdate.checkUpdate(plugin, gitPlatform, org, repository, token);
-}</pre>
-    <h3>Usage</h3>
-    <pre>MCEngineArtificialIntelligenceApi.getApi().checkUpdate("github", "mcengine", "ai-plugin", null);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Checks for plugin updates on GitHub or GitLab and logs the result.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getPlayerToken(String playerUuid, String platform)</h2>
-    <div class="comment">/**
- * Retrieves a stored token for a given player and platform.
- * @param playerUuid The UUID of the player.
- * @param platform   The platform name.
- * @return The encrypted token or null if not found.
- */</div>
-    <h3>API Code</h3>
-    <pre>public String getPlayerToken(String playerUuid, String platform) {
-    return db.getPlayerToken(playerUuid, platform);
-}</pre>
-    <h3>Usage (Normal)</h3>
-    <pre>String token = MCEngineArtificialIntelligenceApi.getApi().getPlayerToken("uuid-1234", "openai");</pre>
-    <h3>Usage (CustomUrl)</h3>
-    <pre>String token = MCEngineArtificialIntelligenceApi.getApi().getPlayerToken("uuid-1234", "customurl:{server name}");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns the stored token for the given player and platform.</div>
-  </div>
-
 </body>
 </html>
