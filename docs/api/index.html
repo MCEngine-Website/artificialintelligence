@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCEngine AI API Usage</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../styles/content/style.css" />
 </head>
 <body>
   <h1>MCEngine Artificial Intelligence API Usage</h1>
@@ -12,7 +12,7 @@
   <div class="api-box">
     <h2>registerModel(Plugin plugin, String platform, String model)</h2>
     <div class="comment">/**
-     * Registers a model under a given platform if not already loaded.
+     * Registers a model under the specified platform if not already registered.
      */</div>
     <h3>API Code</h3>
     <pre>public void registerModel(Plugin plugin, String platform, String model) {
@@ -22,40 +22,12 @@
     <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
 api.registerModel(plugin, "openai", "gpt-4o");</pre>
     <h3>Summary</h3>
-    <div class="summary">Registers a model so that it can be used to process prompts.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getResponse(String platform, String model, String message)</h2>
-    <div class="comment">/** Sends message using registered model and returns response */</div>
-    <h3>API Code</h3>
-    <pre>public String getResponse(String platform, String model, String message) {
-    return getAi(platform, model).getResponse(message);
-}</pre>
-    <h3>Usage</h3>
-    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
-String reply = api.getResponse("openai", "gpt-3.5-turbo", "Hello, AI!");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Gets a direct AI response using server-registered token.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getResponse(String platform, String model, String token, String message)</h2>
-    <div class="comment">/** Sends message using provided token and returns response */</div>
-    <h3>API Code</h3>
-    <pre>public String getResponse(String platform, String model, String token, String message) {
-    return getAi(platform, model).getResponse(token, message);
-}</pre>
-    <h3>Usage</h3>
-    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
-String reply = api.getResponse("openrouter", "custom-model", "my-token", "How's the weather?");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Gets AI response using provided player token.</div>
+    <div class="summary">Registers an AI model under a specific platform so it can be used for responses.</div>
   </div>
 
   <div class="api-box">
     <h2>getAi(String platform, String model)</h2>
-    <div class="comment">/** Retrieves a registered model by platform and name */</div>
+    <div class="comment">/** Retrieves an AI model instance by platform and model name */</div>
     <h3>API Code</h3>
     <pre>public IMCEngineArtificialIntelligenceApiModel getAi(String platform, String model) {
     return MCEngineArtificialIntelligenceApiUtilAi.getAi(platform, model);
@@ -63,12 +35,12 @@ String reply = api.getResponse("openrouter", "custom-model", "my-token", "How's 
     <h3>Usage</h3>
     <pre>IMCEngineArtificialIntelligenceApiModel model = new MCEngineArtificialIntelligenceApi().getAi("openai", "gpt-4");</pre>
     <h3>Summary</h3>
-    <div class="summary">Returns the model instance or null if not found.</div>
+    <div class="summary">Fetches a registered model instance by platform and model name.</div>
   </div>
 
   <div class="api-box">
     <h2>getAiAll()</h2>
-    <div class="comment">/** Returns all registered models */</div>
+    <div class="comment">/** Returns all registered AI models grouped by platform and model name */</div>
     <h3>API Code</h3>
     <pre>public Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; getAiAll() {
     return (Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt;) (Map&lt;?, ?&gt;)
@@ -78,12 +50,40 @@ String reply = api.getResponse("openrouter", "custom-model", "my-token", "How's 
     <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
 Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; allModels = api.getAiAll();</pre>
     <h3>Summary</h3>
-    <div class="summary">Retrieves all models by platform and model name.</div>
+    <div class="summary">Gets a full mapping of all registered AI models grouped by platform.</div>
+  </div>
+
+  <div class="api-box">
+    <h2>getResponse(String platform, String model, String message)</h2>
+    <div class="comment">/** Gets a direct response from a registered AI model using server token */</div>
+    <h3>API Code</h3>
+    <pre>public String getResponse(String platform, String model, String message) {
+    return getAi(platform, model).getResponse(message);
+}</pre>
+    <h3>Usage</h3>
+    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
+String reply = api.getResponse("openai", "gpt-4", "Hello there!");</pre>
+    <h3>Summary</h3>
+    <div class="summary">Uses a server-registered token to send a prompt and return the AI response.</div>
+  </div>
+
+  <div class="api-box">
+    <h2>getResponse(String platform, String model, String token, String message)</h2>
+    <div class="comment">/** Gets a direct response from an AI model using a provided token */</div>
+    <h3>API Code</h3>
+    <pre>public String getResponse(String platform, String model, String token, String message) {
+    return getAi(platform, model).getResponse(token, message);
+}</pre>
+    <h3>Usage</h3>
+    <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
+String reply = api.getResponse("openrouter", "custom-model", "player-token", "What's your name?");</pre>
+    <h3>Summary</h3>
+    <div class="summary">Uses a custom token to send a prompt and receive an AI-generated reply.</div>
   </div>
 
   <div class="api-box">
     <h2>runBotTask(...)</h2>
-    <div class="comment">/** Runs an async bot task for the player */</div>
+    <div class="comment">/** Executes an AI bot task asynchronously using player/server token */</div>
     <h3>API Code</h3>
     <pre>public void runBotTask(Plugin plugin, IMCEngineArtificialIntelligenceDB db, Player player, String tokenType, String platform, String model, String message) {
     new MCEngineArtificialIntelligenceApiUtilBotTask(plugin, this, db, tokenType, player, platform, model, message)
@@ -91,14 +91,14 @@ Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; al
 }</pre>
     <h3>Usage</h3>
     <pre>MCEngineArtificialIntelligenceApi api = new MCEngineArtificialIntelligenceApi();
-api.runBotTask(plugin, db, player, "player", "openai", "gpt-4", "Tell me a joke");</pre>
+api.runBotTask(plugin, db, player, "player", "openai", "gpt-4", "Generate a quest.");</pre>
     <h3>Summary</h3>
-    <div class="summary">Triggers a bot task using the player’s or server’s token depending on type.</div>
+    <div class="summary">Runs a task to fetch AI output asynchronously based on token type.</div>
   </div>
 
   <div class="api-box">
     <h2>setWaiting(Player player, boolean waiting)</h2>
-    <div class="comment">/** Sets whether player is waiting for AI response */</div>
+    <div class="comment">/** Sets the waiting status for a player during AI processing */</div>
     <h3>API Code</h3>
     <pre>public void setWaiting(Player player, boolean waiting) {
     MCEngineArtificialIntelligenceApiUtilBotManager.setWaiting(player, waiting);
@@ -106,20 +106,21 @@ api.runBotTask(plugin, db, player, "player", "openai", "gpt-4", "Tell me a joke"
     <h3>Usage</h3>
     <pre>api.setWaiting(player, true);</pre>
     <h3>Summary</h3>
-    <div class="summary">Tracks whether a player is waiting for AI response.</div>
+    <div class="summary">Marks a player as waiting or not waiting for AI output.</div>
   </div>
 
   <div class="api-box">
     <h2>checkWaitingPlayer(Player player)</h2>
-    <div class="comment">/** Checks if a player is in waiting state */</div>
+    <div class="comment">/** Checks whether a player is currently marked as waiting */</div>
     <h3>API Code</h3>
     <pre>public boolean checkWaitingPlayer(Player player) {
     return MCEngineArtificialIntelligenceApiUtilBotManager.isWaiting(player);
 }</pre>
     <h3>Usage</h3>
-    <pre>boolean waiting = api.checkWaitingPlayer(player);</pre>
+    <pre>boolean isWaiting = api.checkWaitingPlayer(player);</pre>
     <h3>Summary</h3>
-    <div class="summary">Checks if player is waiting for a previous response.</div>
+    <div class="summary">Returns true if the player is waiting for an AI response.</div>
   </div>
+
 </body>
 </html>
