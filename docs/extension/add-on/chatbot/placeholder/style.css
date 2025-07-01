@@ -1,0 +1,118 @@
+/**
+ * Global Reset and Layout
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e1e2f;
+  color: #f1f1f1;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: left;
+}
+
+/**
+ * Header Styling
+ */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00ffd5;
+}
+
+header p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/**
+ * Section Headings
+ */
+main section {
+  margin-bottom: 2.5rem;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffda79;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.3rem;
+}
+
+/**
+ * Code Styling
+ */
+code {
+  background-color: #2e2e3e;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: #9cdcfe;
+  font-family: Consolas, monospace;
+}
+
+/**
+ * Table Styling
+ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2b2b3c;
+  margin-top: 1rem;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+table th, table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #444;
+  vertical-align: top;
+}
+
+table th {
+  background-color: #393952;
+  color: #fff;
+}
+
+table td code {
+  color: #dcdcaa;
+}
+
+.example-matches td:nth-child(2) {
+  vertical-align: middle;
+  text-align: left;
+}
+
+/**
+ * Specific column widths for Example Matches table
+ */
+.example-matches col.col-user-input {
+  width: 40%;
+}
+
+/**
+ * Footer Styling
+ */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #666;
+  font-size: 0.9rem;
+}
