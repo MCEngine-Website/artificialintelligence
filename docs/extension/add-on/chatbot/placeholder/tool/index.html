@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Function Rules JSON Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Function Rules JSON Editor</h1>
+    
+    <details>
+      <summary><strong>📌 Placeholder Reference</strong> (click to expand)</summary>
+      <pre id="placeholderGuide"></pre>
+    </details>
+
+    <div id="rules"></div>
+
+    <div class="buttons">
+      <button onclick="addRule()">➕ Add Rule</button>
+      <button onclick="downloadJSON()">⬇️ Download JSON</button>
+    </div>
+
+    <textarea id="jsonOutput" readonly></textarea>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
