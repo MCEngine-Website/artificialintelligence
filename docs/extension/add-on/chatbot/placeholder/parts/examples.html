@@ -1,0 +1,134 @@
+<h2>💬 Example Matches</h2>
+<table class="example-matches">
+  <colgroup>
+    <col class="col-user-input" />
+    <col />
+  </colgroup>
+  <thead>
+    <tr><th>User Input Examples</th><th>Response</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>"What is in my hand?"<br>"Show my held item"</td><td>You are holding: <code>{item_in_hand}</code></td></tr>
+    <tr><td>"What is my display name?"<br>"Show display name"</td><td>Your display name is <code>{player_displayname}</code>.</td></tr>
+    <tr><td>"How much XP do I have?"<br>"What is my level?"</td><td>Your experience level is <code>{player_exp_level}</code>.</td></tr>
+    <tr><td>"How hungry am I?"<br>"What is my food level?"</td><td>Your food level is <code>{player_food_level}</code>.</td></tr>
+    <tr><td>"What mode am I in?"<br>"Tell me my game mode"</td><td>You are in <code>{player_gamemode}</code> mode.</td></tr>
+    <tr><td>"How much health do I have?"<br>"Tell me my health"</td><td>You have <code>{player_health}</code> health.</td></tr>
+    <tr><td>"What is in my inventory?"<br>"List my items"</td><td>Inventory contents:<br><code>{player_inventory}</code></td></tr>
+    <tr><td>"What is my IP address?"<br>"Tell me my IP"</td><td>Your IP address is <code>{player_ip}</code>.</td></tr>
+    <tr><td>"Where am I?"<br>"Tell me my location"</td><td>You are at <code>{player_location}</code> in world <code>{player_world}</code>.</td></tr>
+    <tr><td>"What is my max health?"<br>"Max HP"</td><td>Your max health is <code>{player_max_health}</code>.</td></tr>
+    <tr><td>"What is my name?"<br>"Who am I?"</td><td>Your name is <code>{player_name}</code>.</td></tr>
+    <tr><td>"What is my UUID?"<br>"Tell me my player ID"</td><td>Your UUID is <code>{player_uuid}</code>.</td></tr>
+    <tr><td>"What is my short UUID?"<br>"Shorten my UUID"</td><td>Short UUID: <code>{player_uuid_short}</code></td></tr>
+    <tr><td>"What world am I in?"<br>"Tell me my world"</td><td>You are in world: <code>{player_world}</code>.</td></tr>
+    <tr><td>"How hard is this world?"<br>"Tell me world difficulty"</td><td>World difficulty: <code>{world_difficulty}</code></td></tr>
+    <tr><td>"How many entities are in the world?"</td><td>Entities in world: <code>{world_entity_count}</code></td></tr>
+    <tr><td>"How many chunks are loaded?"</td><td>Loaded chunks: <code>{world_loaded_chunks}</code></td></tr>
+    <tr><td>"What is the seed?"<br>"World seed?"</td><td>World seed: <code>{world_seed}</code></td></tr>
+    <tr><td>"What time is it in-game?"<br>"Tell me Minecraft time"</td><td>World time: <code>{world_time}</code></td></tr>
+    <tr><td>"What is the weather like?"<br>"Current weather?"</td><td>World weather: <code>{world_weather}</code></td></tr>
+    <tr><td>"What is the server time?"<br>"Current server time"</td><td>Server time is <code>{time_server}</code>.</td></tr>
+    <tr><td>"What is the UTC time?"<br>"Tell me UTC time"</td><td>UTC time is <code>{time_utc}</code>.</td></tr>
+    <tr><td>"What is GMT time?"<br>"Time in GMT?"</td><td>GMT time is <code>{time_gmt}</code>.</td></tr>
+    <tr><td>"Bangkok time?"<br>"What time is it in Bangkok?"</td><td>Bangkok time is <code>{time_bangkok}</code>.</td></tr>
+    <tr><td>"Berlin time?"<br>"What time is it in Berlin?"</td><td>Berlin time is <code>{time_berlin}</code>.</td></tr>
+    <tr><td>"London time?"<br>"What time is it in London?"</td><td>London time is <code>{time_london}</code>.</td></tr>
+    <tr><td>"LA time?"<br>"What time is it in Los Angeles?"</td><td>Los Angeles time is <code>{time_los_angeles}</code>.</td></tr>
+    <tr><td>"New York time?"<br>"What time is it in New York?"</td><td>New York time is <code>{time_new_york}</code>.</td></tr>
+    <tr><td>"Paris time?"<br>"What time is it in Paris?"</td><td>Paris time is <code>{time_paris}</code>.</td></tr>
+    <tr><td>"Singapore time?"<br>"What time is it in Singapore?"</td><td>Singapore time is <code>{time_singapore}</code>.</td></tr>
+    <tr><td>"Sydney time?"<br>"What time is it in Sydney?"</td><td>Sydney time is <code>{time_sydney}</code>.</td></tr>
+    <tr><td>"Tokyo time?"<br>"What time is it in Tokyo?"</td><td>Tokyo time is <code>{time_tokyo}</code>.</td></tr>
+    <tr><td>"Toronto time?"<br>"What time is it in Toronto?"</td><td>Toronto time is <code>{time_toronto}</code>.</td></tr>
+    <tr><td>"What is time in GMT+7?"<br>"Time in UTC+7?"</td><td>Time in GMT+7 is <code>{time_gmt_plus_07_00}</code>.</td></tr>
+    <tr><td>"Tell me all placeholders"<br>"Show me the AI variables"</td>
+        <td>Placeholders: <code>{player_name}, {player_uuid}, {player_displayname}, {player_ip}, {player_gamemode}, {player_health}, {player_max_health}, {player_food_level}, {player_exp_level}, {player_location}, {player_world}, {item_in_hand}, {player_inventory}, {time_server}, {time_utc}, {time_gmt}, {time_bangkok}, {time_berlin}, {time_london}, {time_los_angeles}, {time_new_york}, {time_paris}, {time_singapore}, {time_sydney}, {time_tokyo}, {time_toronto}, {time_gmt_plus_07_00}</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>🧟 Nearby Entity Matches</h2>
+<table class="example-matches">
+  <thead>
+    <tr><th>User Input Examples</th><th>Response</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>"What mobs are near me?"<br>"List nearby entities"</td><td>Nearby entities:<br><code>{nearby_entities_count}</code></td></tr>
+    <tr><td>"How many allays nearby?"<br>"Nearby allay count"</td><td>There are <code>{nearby_allay_count}</code> allays near you.</td></tr>
+    <tr><td>"How many armadillos nearby?"<br>"Nearby armadillo count"</td><td>There are <code>{nearby_armadillo_count}</code> armadillos near you.</td></tr>
+    <tr><td>"How many axolotls nearby?"<br>"Nearby axolotl count"</td><td>There are <code>{nearby_axolotl_count}</code> axolotls near you.</td></tr>
+    <tr><td>"How many bats nearby?"<br>"Nearby bat count"</td><td>There are <code>{nearby_bat_count}</code> bats near you.</td></tr>
+    <tr><td>"How many bees nearby?"<br>"Nearby bee count"</td><td>There are <code>{nearby_bee_count}</code> bees near you.</td></tr>
+    <tr><td>"How many blazes nearby?"<br>"Nearby blaze count"</td><td>There are <code>{nearby_blaze_count}</code> blazes near you.</td></tr>
+    <tr><td>"How many camels nearby?"<br>"Nearby camel count"</td><td>There are <code>{nearby_camel_count}</code> camels near you.</td></tr>
+    <tr><td>"How many cats nearby?"<br>"Nearby cat count"</td><td>There are <code>{nearby_cat_count}</code> cats near you.</td></tr>
+    <tr><td>"How many cave spiders nearby?"<br>"Nearby cave_spider count"</td><td>There are <code>{nearby_cave_spider_count}</code> cave spiders near you.</td></tr>
+    <tr><td>"How many chickens nearby?"<br>"Nearby chicken count"</td><td>There are <code>{nearby_chicken_count}</code> chickens near you.</td></tr>
+    <tr><td>"How many cod nearby?"<br>"Nearby cod count"</td><td>There are <code>{nearby_cod_count}</code> cod near you.</td></tr>
+    <tr><td>"How many cows nearby?"<br>"Nearby cow count"</td><td>There are <code>{nearby_cow_count}</code> cows near you.</td></tr>
+    <tr><td>"How many creepers nearby?"<br>"Nearby creeper count"</td><td>There are <code>{nearby_creeper_count}</code> creepers near you.</td></tr>
+    <tr><td>"How many dolphins nearby?"<br>"Nearby dolphin count"</td><td>There are <code>{nearby_dolphin_count}</code> dolphins near you.</td></tr>
+    <tr><td>"How many donkeys nearby?"<br>"Nearby donkey count"</td><td>There are <code>{nearby_donkey_count}</code> donkeys near you.</td></tr>
+    <tr><td>"How many drowned nearby?"<br>"Nearby drowned count"</td><td>There are <code>{nearby_drowned_count}</code> drowned near you.</td></tr>
+    <tr><td>"How many elder guardians nearby?"<br>"Nearby elder_guardian count"</td><td>There are <code>{nearby_elder_guardian_count}</code> elder guardians near you.</td></tr>
+    <tr><td>"How many ender dragons nearby?"<br>"Nearby ender_dragon count"</td><td>There are <code>{nearby_ender_dragon_count}</code> ender dragons near you.</td></tr>
+    <tr><td>"How many endermites nearby?"<br>"Nearby endermite count"</td><td>There are <code>{nearby_endermite_count}</code> endermites near you.</td></tr>
+    <tr><td>"How many evokers nearby?"<br>"Nearby evoker count"</td><td>There are <code>{nearby_evoker_count}</code> evokers near you.</td></tr>
+    <tr><td>"How many foxes nearby?"<br>"Nearby fox count"</td><td>There are <code>{nearby_fox_count}</code> foxes near you.</td></tr>
+    <tr><td>"How many frogs nearby?"<br>"Nearby frog count"</td><td>There are <code>{nearby_frog_count}</code> frogs near you.</td></tr>
+    <tr><td>"How many ghasts nearby?"<br>"Nearby ghast count"</td><td>There are <code>{nearby_ghast_count}</code> ghasts near you.</td></tr>
+    <tr><td>"How many glow squids nearby?"<br>"Nearby glow_squid count"</td><td>There are <code>{nearby_glow_squid_count}</code> glow squids near you.</td></tr>
+    <tr><td>"How many goats nearby?"<br>"Nearby goat count"</td><td>There are <code>{nearby_goat_count}</code> goats near you.</td></tr>
+    <tr><td>"How many guardians nearby?"<br>"Nearby guardian count"</td><td>There are <code>{nearby_guardian_count}</code> guardians near you.</td></tr>
+    <tr><td>"How many hoglins nearby?"<br>"Nearby hoglin count"</td><td>There are <code>{nearby_hoglin_count}</code> hoglins near you.</td></tr>
+    <tr><td>"How many horses nearby?"<br>"Nearby horse count"</td><td>There are <code>{nearby_horse_count}</code> horses near you.</td></tr>
+    <tr><td>"How many husks nearby?"<br>"Nearby husk count"</td><td>There are <code>{nearby_husk_count}</code> husks near you.</td></tr>
+    <tr><td>"How many illusioners nearby?"<br>"Nearby illusioner count"</td><td>There are <code>{nearby_illusioner_count}</code> illusioners near you.</td></tr>
+    <tr><td>"How many iron golems nearby?"<br>"Nearby iron_golem count"</td><td>There are <code>{nearby_iron_golem_count}</code> iron golems near you.</td></tr>
+    <tr><td>"How many llamas nearby?"<br>"Nearby llama count"</td><td>There are <code>{nearby_llama_count}</code> llamas near you.</td></tr>
+    <tr><td>"How many magma cubes nearby?"<br>"Nearby magma_cube count"</td><td>There are <code>{nearby_magma_cube_count}</code> magma cubes near you.</td></tr>
+    <tr><td>"How many mooshrooms nearby?"<br>"Nearby mooshroom count"</td><td>There are <code>{nearby_mooshroom_count}</code> mooshrooms near you.</td></tr>
+    <tr><td>"How many mules nearby?"<br>"Nearby mule count"</td><td>There are <code>{nearby_mule_count}</code> mules near you.</td></tr>
+    <tr><td>"How many ocelots nearby?"<br>"Nearby ocelot count"</td><td>There are <code>{nearby_ocelot_count}</code> ocelots near you.</td></tr>
+    <tr><td>"How many pandas nearby?"<br>"Nearby panda count"</td><td>There are <code>{nearby_panda_count}</code> pandas near you.</td></tr>
+    <tr><td>"How many parrots nearby?"<br>"Nearby parrot count"</td><td>There are <code>{nearby_parrot_count}</code> parrots near you.</td></tr>
+    <tr><td>"How many phantoms nearby?"<br>"Nearby phantom count"</td><td>There are <code>{nearby_phantom_count}</code> phantoms near you.</td></tr>
+    <tr><td>"How many pigs nearby?"<br>"Nearby pig count"</td><td>There are <code>{nearby_pig_count}</code> pigs near you.</td></tr>
+    <tr><td>"How many piglin brutes nearby?"<br>"Nearby piglin_brute count"</td><td>There are <code>{nearby_piglin_brute_count}</code> piglin brutes near you.</td></tr>
+    <tr><td>"How many piglins nearby?"<br>"Nearby piglin count"</td><td>There are <code>{nearby_piglin_count}</code> piglins near you.</td></tr>
+    <tr><td>"How many pillagers nearby?"<br>"Nearby pillager count"</td><td>There are <code>{nearby_pillager_count}</code> pillagers near you.</td></tr>
+    <tr><td>"How many polar bears nearby?"<br>"Nearby polar_bear count"</td><td>There are <code>{nearby_polar_bear_count}</code> polar bears near you.</td></tr>
+    <tr><td>"How many pufferfish nearby?"<br>"Nearby pufferfish count"</td><td>There are <code>{nearby_pufferfish_count}</code> pufferfish near you.</td></tr>
+    <tr><td>"How many rabbits nearby?"<br>"Nearby rabbit count"</td><td>There are <code>{nearby_rabbit_count}</code> rabbits near you.</td></tr>
+    <tr><td>"How many ravagers nearby?"<br>"Nearby ravager count"</td><td>There are <code>{nearby_ravager_count}</code> ravagers near you.</td></tr>
+    <tr><td>"How many salmon nearby?"<br>"Nearby salmon count"</td><td>There are <code>{nearby_salmon_count}</code> salmon near you.</td></tr>
+    <tr><td>"How many sheep nearby?"<br>"Nearby sheep count"</td><td>There are <code>{nearby_sheep_count}</code> sheep near you.</td></tr>
+    <tr><td>"How many shulkers nearby?"<br>"Nearby shulker count"</td><td>There are <code>{nearby_shulker_count}</code> shulkers near you.</td></tr>
+    <tr><td>"How many silverfish nearby?"<br>"Nearby silverfish count"</td><td>There are <code>{nearby_silverfish_count}</code> silverfish near you.</td></tr>
+    <tr><td>"How many skeleton horses nearby?"<br>"Nearby skeleton_horse count"</td><td>There are <code>{nearby_skeleton_horse_count}</code> skeleton horses near you.</td></tr>
+    <tr><td>"How many skeletons nearby?"<br>"Nearby skeleton count"</td><td>There are <code>{nearby_skeleton_count}</code> skeletons near you.</td></tr>
+    <tr><td>"How many slimes nearby?"<br>"Nearby slime count"</td><td>There are <code>{nearby_slime_count}</code> slimes near you.</td></tr>
+    <tr><td>"How many sniffers nearby?"<br>"Nearby sniffer count"</td><td>There are <code>{nearby_sniffer_count}</code> sniffers near you.</td></tr>
+    <tr><td>"How many snow golems nearby?"<br>"Nearby snow_golem count"</td><td>There are <code>{nearby_snow_golem_count}</code> snow golems near you.</td></tr>
+    <tr><td>"How many spiders nearby?"<br>"Nearby spider count"</td><td>There are <code>{nearby_spider_count}</code> spiders near you.</td></tr>
+    <tr><td>"How many squids nearby?"<br>"Nearby squid count"</td><td>There are <code>{nearby_squid_count}</code> squids near you.</td></tr>
+    <tr><td>"How many strays nearby?"<br>"Nearby stray count"</td><td>There are <code>{nearby_stray_count}</code> strays near you.</td></tr>
+    <tr><td>"How many striders nearby?"<br>"Nearby strider count"</td><td>There are <code>{nearby_strider_count}</code> striders near you.</td></tr>
+    <tr><td>"How many trader llamas nearby?"<br>"Nearby trader_llama count"</td><td>There are <code>{nearby_trader_llama_count}</code> trader llamas near you.</td></tr>
+    <tr><td>"How many tropical fish nearby?"<br>"Nearby tropical_fish count"</td><td>There are <code>{nearby_tropical_fish_count}</code> tropical fish near you.</td></tr>
+    <tr><td>"How many turtles nearby?"<br>"Nearby turtle count"</td><td>There are <code>{nearby_turtle_count}</code> turtles near you.</td></tr>
+    <tr><td>"How many vexes nearby?"<br>"Nearby vex count"</td><td>There are <code>{nearby_vex_count}</code> vexes near you.</td></tr>
+    <tr><td>"How many vindicators nearby?"<br>"Nearby vindicator count"</td><td>There are <code>{nearby_vindicator_count}</code> vindicators near you.</td></tr>
+    <tr><td>"How many wardens nearby?"<br>"Nearby warden count"</td><td>There are <code>{nearby_warden_count}</code> wardens near you.</td></tr>
+    <tr><td>"How many witches nearby?"<br>"Nearby witch count"</td><td>There are <code>{nearby_witch_count}</code> witches near you.</td></tr>
+    <tr><td>"How many wither skeletons nearby?"<br>"Nearby wither_skeleton count"</td><td>There are <code>{nearby_wither_skeleton_count}</code> wither skeletons near you.</td></tr>
+    <tr><td>"How many withers nearby?"<br>"Nearby wither count"</td><td>There are <code>{nearby_wither_count}</code> withers near you.</td></tr>
+    <tr><td>"How many wolves nearby?"<br>"Nearby wolf count"</td><td>There are <code>{nearby_wolf_count}</code> wolves near you.</td></tr>
+    <tr><td>"How many zoglins nearby?"<br>"Nearby zoglin count"</td><td>There are <code>{nearby_zoglin_count}</code> zoglins near you.</td></tr>
+    <tr><td>"How many zombie horses nearby?"<br>"Nearby zombie_horse count"</td><td>There are <code>{nearby_zombie_horse_count}</code> zombie horses near you.</td></tr>
+    <tr><td>"How many zombie villagers nearby?"<br>"Nearby zombie_villager count"</td><td>There are <code>{nearby_zombie_villager_count}</code> zombie villagers near you.</td></tr>
+    <tr><td>"How many zombies nearby?"<br>"Nearby zombie count"</td><td>There are <code>{nearby_zombie_count}</code> zombies near you.</td></tr>
+  </tbody>
+</table>
+

@@ -15,6 +15,85 @@ const PLACEHOLDER_GUIDE = `\
 {player_uuid_short}       → Short UUID
 {player_world}            → Current world
 
+=== Nearby Entity Counts ===
+{nearby_allay_count}             → Nearby allays count
+{nearby_armadillo_count}         → Nearby armadillos count
+{nearby_axolotl_count}           → Nearby axolotls count
+{nearby_bat_count}               → Nearby bats count
+{nearby_bee_count}               → Nearby bees count
+{nearby_blaze_count}             → Nearby blazes count
+{nearby_bogged_count}            → Nearby bogged count
+{nearby_breeze_count}            → Nearby breeze count
+{nearby_camel_count}             → Nearby camels count
+{nearby_cat_count}               → Nearby cats count
+{nearby_cave_spider_count}       → Nearby cave spiders count
+{nearby_chicken_count}           → Nearby chickens count
+{nearby_cod_count}               → Nearby cod count
+{nearby_cow_count}               → Nearby cows count
+{nearby_creeper_count}           → Nearby creepers count
+{nearby_dolphin_count}           → Nearby dolphins count
+{nearby_donkey_count}            → Nearby donkeys count
+{nearby_drowned_count}           → Nearby drowned count
+{nearby_elder_guardian_count}    → Nearby elder guardians count
+{nearby_ender_dragon_count}      → Nearby ender dragons count
+{nearby_endermite_count}         → Nearby endermites count
+{nearby_evoker_count}            → Nearby evokers count
+{nearby_fox_count}               → Nearby foxes count
+{nearby_frog_count}              → Nearby frogs count
+{nearby_ghast_count}             → Nearby ghasts count
+{nearby_glow_squid_count}        → Nearby glow squids count
+{nearby_goat_count}              → Nearby goats count
+{nearby_guardian_count}          → Nearby guardians count
+{nearby_hoglin_count}            → Nearby hoglins count
+{nearby_horse_count}             → Nearby horses count
+{nearby_husk_count}              → Nearby husks count
+{nearby_illusioner_count}        → Nearby illusioners count
+{nearby_iron_golem_count}        → Nearby iron golems count
+{nearby_llama_count}             → Nearby llamas count
+{nearby_magma_cube_count}        → Nearby magma cubes count
+{nearby_mooshroom_count}         → Nearby mooshrooms count
+{nearby_mule_count}              → Nearby mules count
+{nearby_ocelot_count}            → Nearby ocelots count
+{nearby_panda_count}             → Nearby pandas count
+{nearby_parrot_count}            → Nearby parrots count
+{nearby_phantom_count}           → Nearby phantoms count
+{nearby_pig_count}               → Nearby pigs count
+{nearby_piglin_brute_count}      → Nearby piglin brutes count
+{nearby_piglin_count}            → Nearby piglins count
+{nearby_pillager_count}          → Nearby pillagers count
+{nearby_polar_bear_count}        → Nearby polar bears count
+{nearby_pufferfish_count}        → Nearby pufferfish count
+{nearby_rabbit_count}            → Nearby rabbits count
+{nearby_ravager_count}           → Nearby ravagers count
+{nearby_salmon_count}            → Nearby salmon count
+{nearby_sheep_count}             → Nearby sheep count
+{nearby_shulker_count}           → Nearby shulkers count
+{nearby_silverfish_count}        → Nearby silverfish count
+{nearby_skeleton_count}          → Nearby skeletons count
+{nearby_skeleton_horse_count}    → Nearby skeleton horses count
+{nearby_slime_count}             → Nearby slimes count
+{nearby_sniffer_count}           → Nearby sniffers count
+{nearby_snow_golem_count}        → Nearby snow golems count
+{nearby_spider_count}            → Nearby spiders count
+{nearby_squid_count}             → Nearby squids count
+{nearby_stray_count}             → Nearby strays count
+{nearby_strider_count}           → Nearby striders count
+{nearby_trader_llama_count}      → Nearby trader llamas count
+{nearby_tropical_fish_count}     → Nearby tropical fish count
+{nearby_turtle_count}            → Nearby turtles count
+{nearby_vex_count}               → Nearby vexes count
+{nearby_vindicator_count}        → Nearby vindicators count
+{nearby_warden_count}            → Nearby wardens count
+{nearby_witch_count}             → Nearby witches count
+{nearby_wither_count}            → Nearby withers count
+{nearby_wither_skeleton_count}   → Nearby wither skeletons count
+{nearby_wolf_count}              → Nearby wolves count
+{nearby_zoglin_count}            → Nearby zoglins count
+{nearby_zombie_count}            → Nearby zombies count
+{nearby_zombie_horse_count}      → Nearby zombie horses count
+{nearby_zombie_villager_count}   → Nearby zombie villagers count
+{nearby_zombified_piglin_count}  → Nearby zombified piglins count
+
 === World Placeholders ===
 {world_difficulty}        → Difficulty
 {world_entity_count}      → Loaded entities
