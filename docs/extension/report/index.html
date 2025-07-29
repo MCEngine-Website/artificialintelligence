@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MCEngine AI - Chatbot Reference</title>
+  <title>MCEngine AI - Report Reference</title>
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="https://mcengine-website.github.io/templates/v1/css/dashboard/style.css" />
@@ -22,8 +22,8 @@
       <!-- Main content box -->
       <main class="main-content">
         <div class="content-header">
-          <h1>Chatbot</h1>
-          <p>Dynamically insert real-time player and server data in responses.</p>
+          <h1>Report</h1>
+          <p>AI report summary.</p>
         </div>
         <div class="content-body" id="markdown-container">
           <!-- Markdown sections loaded here -->
@@ -40,22 +40,13 @@
       });
 
     // Load markdown files from /contents/chatbot/
-    loadMarkdownFiles('../../contents/extension/chatbot/', 'markdown-container', [
+    loadMarkdownFiles('../../contents/extension/report/', 'markdown-container', [
       'intro.md',
       'require.md',
-      'features.md',
       'command-usage.md',
-      'example.md',
-      'how-it-works.md',
-      'email-system.md',
       'examples.md',
-      'example_nearby_entity_count.md',
-      'example_nearby_entity_detail.md',
-      'offset.md',
-      'player.md',
-      'server.md',
-      'timezone.md',
-      'world.md'
+      'how-it-works.md',
+      'important.md'
     ]);
   </script>
 </body>
