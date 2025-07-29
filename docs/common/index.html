@@ -2,132 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MCEngine AI Common Usage</title>
-  <link rel="stylesheet" href="../styles/content/style.css" />
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="https://mcengine-website.github.io/templates/v1/css/dashboard/style.css" />
+  <link rel="stylesheet" href="https://mcengine-website.github.io/templates/v1/css/partials/sidebar.css" />
+
+  <!-- Markdown Parser + Content Loader -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://mcengine-website.github.io/templates/v1/scripts/markdown-loader.js"></script>
 </head>
 <body>
-  <h1>MCEngine Artificial Intelligence - Common Class Usage</h1>
+  <div class="dashboard-wrapper">
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar box" id="sidebar"></aside>
 
-  <div class="api-box">
-    <h2>getApi()</h2>
-    <div class="comment">/** Returns the global API singleton instance. */</div>
-    <h3>Function</h3>
-    <pre>public static MCEngineArtificialIntelligenceCommon getApi()</pre>
-    <h3>Usage</h3>
-    <pre>MCEngineArtificialIntelligenceCommon common = MCEngineArtificialIntelligenceCommon.getApi();</pre>
-    <h3>Summary</h3>
-    <div class="summary">Accesses the global instance of the common AI handler.</div>
+      <!-- Main content box -->
+      <main class="main-content">
+        <div class="content-header">
+          <h1>MCEngine AI - Common Usage</h1>
+        </div>
+        <div class="content-body" id="markdown-container">
+          <!-- Markdown sections loaded here -->
+        </div>
+      </main>
+    </div>
   </div>
 
-  <div class="api-box">
-    <h2>registerModel(String platform, String model)</h2>
-    <div class="comment">/** Registers a model under the specified platform. */</div>
-    <h3>Function</h3>
-    <pre>public void registerModel(String platform, String model)</pre>
-    <h3>Usage</h3>
-    <pre>common.registerModel("openai", "gpt-4");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Registers a model under a platform for later use.</div>
-  </div>
+  <script>
+    fetch('../partials/sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar').innerHTML = html;
+      });
 
-  <div class="api-box">
-    <h2>getAi(String platform, String model)</h2>
-    <div class="comment">/** Retrieves a registered model by platform and model name. */</div>
-    <h3>Function</h3>
-    <pre>public IMCEngineArtificialIntelligenceApiModel getAi(String platform, String model)</pre>
-    <h3>Usage</h3>
-    <pre>IMCEngineArtificialIntelligenceApiModel model = common.getAi("openai", "gpt-4");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Fetches a specific model instance by name and platform.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getAiAll()</h2>
-    <div class="comment">/** Gets all registered models. */</div>
-    <h3>Function</h3>
-    <pre>public Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; getAiAll()</pre>
-    <h3>Usage</h3>
-    <pre>Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; models = common.getAiAll();</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns all registered models grouped by platform.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getResponse(String platform, String model, String message)</h2>
-    <div class="comment">/** Sends a prompt using a server token and returns full JSON. */</div>
-    <h3>Function</h3>
-    <pre>public JsonObject getResponse(String platform, String model, String message)</pre>
-    <h3>Usage</h3>
-    <pre>JsonObject response = common.getResponse("openai", "gpt-4", "Tell me a story.");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Sends a message to the AI using a server-configured token.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getResponse(String platform, String model, String token, String message)</h2>
-    <div class="comment">/** Sends a prompt using a custom token and returns full JSON. */</div>
-    <h3>Function</h3>
-    <pre>public JsonObject getResponse(String platform, String model, String token, String message)</pre>
-    <h3>Usage</h3>
-    <pre>JsonObject response = common.getResponse("openrouter", "custom", "my-token", "How are you?");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Sends a message to the AI using a specified token.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>runBotTask(Player player, String tokenType, String platform, String model, String message)</h2>
-    <div class="comment">/** Executes a bot task asynchronously. */</div>
-    <h3>Function</h3>
-    <pre>public void runBotTask(Player player, String tokenType, String platform, String model, String message)</pre>
-    <h3>Usage</h3>
-    <pre>common.runBotTask(player, "player", "openai", "gpt-4", "Help me with my quest.");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Starts an asynchronous task using the selected AI model and token.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>setWaiting(Player player, boolean waiting)</h2>
-    <div class="comment">/** Sets whether a player is currently waiting for a response. */</div>
-    <h3>Function</h3>
-    <pre>public void setWaiting(Player player, boolean waiting)</pre>
-    <h3>Usage</h3>
-    <pre>common.setWaiting(player, true);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Marks the player as awaiting an AI response.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>checkWaitingPlayer(Player player)</h2>
-    <div class="comment">/** Checks if a player is currently waiting for a response. */</div>
-    <h3>Function</h3>
-    <pre>public boolean checkWaitingPlayer(Player player)</pre>
-    <h3>Usage</h3>
-    <pre>boolean isWaiting = common.checkWaitingPlayer(player);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns true if the player is currently marked as waiting.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getCompletionContent(JsonObject responseJson)</h2>
-    <div class="comment">/** Extracts the completion message from an AI response. */</div>
-    <h3>Function</h3>
-    <pre>public String getCompletionContent(JsonObject responseJson)</pre>
-    <h3>Usage</h3>
-    <pre>String text = common.getCompletionContent(response);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns the message content from the AI response JSON.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getTotalTokenUsage(JsonObject responseJson)</h2>
-    <div class="comment">/** Gets total token usage from the AI response JSON. */</div>
-    <h3>Function</h3>
-    <pre>public int getTotalTokenUsage(JsonObject responseJson)</pre>
-    <h3>Usage</h3>
-    <pre>int tokens = common.getTotalTokenUsage(response);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns the number of tokens used during the interaction.</div>
-  </div>
+    // Load markdown files from /contents/ai-common/
+    loadMarkdownFiles('../contents/common/', 'markdown-container', [
+      'getApi.md',
+      'registerModel.md',
+      'getAi.md',
+      'getAiAll.md',
+      'getResponseServerToken.md',
+      'getResponseCustomToken.md',
+      'runBotTask.md',
+      'setWaiting.md',
+      'checkWaitingPlayer.md',
+      'getCompletionContent.md',
+      'getTotalTokenUsage.md'
+    ]);
+  </script>
 </body>
 </html>

@@ -2,146 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MCEngine AI API Usage</title>
-  <link rel="stylesheet" href="../styles/content/style.css" />
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="https://mcengine-website.github.io/templates/v1/css/dashboard/style.css" />
+  <link rel="stylesheet" href="https://mcengine-website.github.io/templates/v1/css/partials/sidebar.css" />
+
+  <!-- Markdown Parser + Content Loader -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://mcengine-website.github.io/templates/v1/scripts/markdown-loader.js"></script>
 </head>
 <body>
-  <h1>MCEngine Artificial Intelligence API Usage</h1>
+  <div class="dashboard-wrapper">
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar box" id="sidebar"></aside>
 
-  <div class="api-box">
-    <h2>registerModel(Plugin plugin, String platform, String model)</h2>
-    <div class="comment">/**
-     * Registers a model under the specified platform if not already registered.
-     */</div>
-    <h3>API Code</h3>
-    <pre>public void registerModel(Plugin plugin, String platform, String model) {
-    MCEngineArtificialIntelligenceApiUtilAi.registerModel(plugin, platform, model);
-}</pre>
-    <h3>Usage</h3>
-    <pre>api.registerModel(plugin, "openai", "gpt-4o");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Registers an AI model under a specific platform.</div>
+      <!-- Main content box -->
+      <main class="main-content">
+        <div class="content-header">
+          <h1>MCEngine AI API Usage</h1>
+        </div>
+        <div class="content-body" id="markdown-container">
+          <!-- Markdown sections loaded here -->
+        </div>
+      </main>
+    </div>
   </div>
 
-  <div class="api-box">
-    <h2>getAi(String platform, String model)</h2>
-    <div class="comment">/** Retrieves an AI model instance by platform and model name. */</div>
-    <h3>API Code</h3>
-    <pre>public IMCEngineArtificialIntelligenceApiModel getAi(String platform, String model) {
-    return MCEngineArtificialIntelligenceApiUtilAi.getAi(platform, model);
-}</pre>
-    <h3>Usage</h3>
-    <pre>IMCEngineArtificialIntelligenceApiModel model = api.getAi("openai", "gpt-4");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Fetches a registered model instance.</div>
-  </div>
+  <script>
+    fetch('../partials/sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar').innerHTML = html;
+      });
 
-  <div class="api-box">
-    <h2>getAiAll()</h2>
-    <div class="comment">/** Returns all registered AI models grouped by platform and model name. */</div>
-    <h3>API Code</h3>
-    <pre>public Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; getAiAll() {
-    return (Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt;) (Map&lt;?, ?&gt;)
-        MCEngineArtificialIntelligenceApiUtilAi.getAllModels();
-}</pre>
-    <h3>Usage</h3>
-    <pre>Map&lt;String, Map&lt;String, IMCEngineArtificialIntelligenceApiModel&gt;&gt; allModels = api.getAiAll();</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns a nested map of all registered models.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>runBotTask(...)</h2>
-    <div class="comment">/** Executes an AI bot task asynchronously. */</div>
-    <h3>API Code</h3>
-    <pre>public void runBotTask(Plugin plugin, IMCEngineArtificialIntelligenceDB db, Player player, String tokenType, String platform, String model, String message) {
-    new MCEngineArtificialIntelligenceApiUtilBotTask(plugin, this, db, tokenType, player, platform, model, message)
-        .runTaskAsynchronously(plugin);
-}</pre>
-    <h3>Usage</h3>
-    <pre>api.runBotTask(plugin, db, player, "player", "openai", "gpt-4", "Write a story.");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Asynchronously runs a task that sends a message to an AI model and processes the response.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>setWaiting(Player player, boolean waiting)</h2>
-    <div class="comment">/** Sets the waiting status of a player. */</div>
-    <h3>API Code</h3>
-    <pre>public void setWaiting(Player player, boolean waiting) {
-    MCEngineArtificialIntelligenceApiUtilBotManager.setWaiting(player, waiting);
-}</pre>
-    <h3>Usage</h3>
-    <pre>api.setWaiting(player, true);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Marks the player as waiting or not for AI response.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>checkWaitingPlayer(Player player)</h2>
-    <div class="comment">/** Checks if the player is marked as waiting. */</div>
-    <h3>API Code</h3>
-    <pre>public boolean checkWaitingPlayer(Player player) {
-    return MCEngineArtificialIntelligenceApiUtilBotManager.isWaiting(player);
-}</pre>
-    <h3>Usage</h3>
-    <pre>boolean isWaiting = api.checkWaitingPlayer(player);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns true if the player is in a waiting state for AI output.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getCompletionContent(JsonObject responseJson)</h2>
-    <div class="comment">/** Extracts text content from AI response JSON. */</div>
-    <h3>API Code</h3>
-    <pre>public String getCompletionContent(JsonObject responseJson) {
-    return MCEngineArtificialIntelligenceApiUtilAi.getCompletionContent(responseJson);
-}</pre>
-    <h3>Usage</h3>
-    <pre>String content = api.getCompletionContent(response);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Extracts the message content from the full AI response JSON.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getTotalTokenUsage(JsonObject responseJson)</h2>
-    <div class="comment">/** Extracts total token usage from AI response JSON. */</div>
-    <h3>API Code</h3>
-    <pre>public int getTotalTokenUsage(JsonObject responseJson) {
-    return MCEngineArtificialIntelligenceApiUtilAi.getTotalTokenUsage(responseJson);
-}</pre>
-    <h3>Usage</h3>
-    <pre>int tokensUsed = api.getTotalTokenUsage(response);</pre>
-    <h3>Summary</h3>
-    <div class="summary">Returns total token count used in the request-response cycle.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getResponse(String platform, String model, String message)</h2>
-    <div class="comment">/** Wrapper to getResponse using server token (returns JSON). */</div>
-    <h3>API Code</h3>
-    <pre>public JsonObject getResponse(String platform, String model, String message) {
-    return getResponse(platform, model, message);
-}</pre>
-    <h3>Usage</h3>
-    <pre>JsonObject json = api.getResponse("openai", "gpt-4", "Tell me a joke.");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Shortcut to fetch JSON response using server token.</div>
-  </div>
-
-  <div class="api-box">
-    <h2>getResponse(String platform, String model, String token, String message)</h2>
-    <div class="comment">/** Wrapper to getResponse using custom token (returns JSON). */</div>
-    <h3>API Code</h3>
-    <pre>public JsonObject getResponse(String platform, String model, String token, String message) {
-    return getResponse(platform, model, token, message);
-}</pre>
-    <h3>Usage</h3>
-    <pre>JsonObject json = api.getResponse("openrouter", "custom", "abc123", "What is love?");</pre>
-    <h3>Summary</h3>
-    <div class="summary">Shortcut to fetch JSON response using custom token.</div>
-  </div>
-
+    // Load markdown files from /contents/ai-api/
+    loadMarkdownFiles('../contents/api/', 'markdown-container', [
+      'registerModel.md',
+      'getAi.md',
+      'getAiAll.md',
+      'runBotTask.md',
+      'setWaiting.md',
+      'checkWaitingPlayer.md',
+      'getCompletionContent.md',
+      'getTotalTokenUsage.md',
+      'getResponseServerToken.md',
+      'getResponseCustomToken.md'
+    ]);
+  </script>
 </body>
 </html>
