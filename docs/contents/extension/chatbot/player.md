@@ -1,6 +1,6 @@
 ## 🧍 Basic Player Placeholders
 
-| Placeholder                 | Description                         |
+| Placeholder                | Description                         |
 |----------------------------|-------------------------------------|
 | `{item_in_hand}`           | Item player is currently holding    |
 | `{player_displayname}`     | Player's display name               |

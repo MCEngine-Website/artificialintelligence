@@ -1,6 +1,6 @@
 ## 🌐 Named Time Zones
 
-| Placeholder                 | Region               |
+| Placeholder                | Region               |
 |----------------------------|----------------------|
 | `{time_bangkok}`           | Asia/Bangkok         |
 | `{time_berlin}`            | Europe/Berlin        |
