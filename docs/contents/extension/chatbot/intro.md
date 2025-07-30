@@ -7,5 +7,6 @@ After that, you can chat naturally messages are private and won't be visible to 
 
 The AI will maintain context by combining the previous conversation with your new prompt. 🤖✨
 
-[`SpigotMC`](https://www.spigotmc.org/resources/artificialintelligence-addon-chatbot.124933/)
+
 [`GitHub Release`](https://github.com/MCEngine-Extension/artificialintelligence-addon-chatbot/releases)
+[`SpigotMC`](https://www.spigotmc.org/resources/artificialintelligence-addon-chatbot.124933/)
