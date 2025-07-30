@@ -29,8 +29,6 @@
           <!-- Markdown sections loaded here -->
         </div>
       </main>
-
-      <!-- <aside class="sidebar box" id="addition-content-sidebar"></aside> -->
     </div>
   </div>
 
@@ -39,11 +37,6 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('sidebar').innerHTML = html;
-      });
-    fetch('../../partials/chatbot-sidebar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('addition-content-sidebar').innerHTML = html;
       });
 
     // Load markdown files from /contents/chatbot/
