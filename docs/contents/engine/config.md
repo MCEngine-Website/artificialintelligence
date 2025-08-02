@@ -72,4 +72,8 @@ ai:
     # Default model loaded when the plugin starts
     models:
       model1:
+
+# Function calling
+function-calling:
+  path: rules
 ```
