@@ -1,6 +1,7 @@
 # AI API Module Usage Guide
 
 **Path:** `com.example.MyAIAPI.java`
+[`Example Repository`](https://github.com/MCEngine-Extension/artificialintelligence-api-example)
 
 This document explains how to implement the `IMCEngineArtificialIntelligenceAPI` interface to create a core AI API module for the MCEngine.
 
@@ -10,6 +11,7 @@ This document explains how to implement the `IMCEngineArtificialIntelligenceAPI`
 package com.example;
 
 import io.github.mcengine.api.artificialintelligence.extension.api.IMCEngineArtificialIntelligenceAPI;
+import io.github.mcengine.api.core.MCEngineCoreApi;
 import io.github.mcengine.api.core.extension.logger.MCEngineExtensionLogger;
 import org.bukkit.plugin.Plugin;
 
@@ -31,7 +33,7 @@ public class MyAIAPI implements IMCEngineArtificialIntelligenceAPI {
 
     @Override
     public void setId(String id) {
-        MCEngineApi.setId("example");
+        MCEngineCoreApi.setId("artificialintelligence-example-api");
     }
 }
 ```

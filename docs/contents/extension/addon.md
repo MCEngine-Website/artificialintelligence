@@ -1,6 +1,7 @@
 # AI AddOn Usage Guide
 
 **Path:** `com.example.MyAIAddOn.java`
+[`Example Repository`](https://github.com/MCEngine-Extension/artificialintelligence-addon-example)
 
 This document explains how to implement the `IMCEngineArtificialIntelligenceAddOn` interface to create a custom AI-based AddOn for the MCEngine.
 
@@ -10,6 +11,7 @@ This document explains how to implement the `IMCEngineArtificialIntelligenceAddO
 package com.example;
 
 import io.github.mcengine.api.artificialintelligence.extension.addon.IMCEngineArtificialIntelligenceAddOn;
+import io.github.mcengine.api.core.MCEngineCoreApi;
 import io.github.mcengine.api.core.extension.logger.MCEngineExtensionLogger;
 import org.bukkit.plugin.Plugin;
 
@@ -31,7 +33,7 @@ public class MyAIAddOn implements IMCEngineArtificialIntelligenceAddOn {
 
     @Override
     public void setId(String id) {
-        MCEngineApi.setId("example");
+        MCEngineCoreApi.setId("artificialintelligence-example-addon");
     }
 }
 ```

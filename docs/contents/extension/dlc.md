@@ -1,6 +1,7 @@
 # AI DLC Module Usage Guide
 
 **Path:** `com.example.MyAIDLC.java`
+[`Example Repository`](https://github.com/MCEngine-Extension/artificialintelligence-dlc-example)
 
 This document explains how to implement the `IMCEngineArtificialIntelligenceDLC` interface to create a custom AI-based DLC module for the MCEngine.
 
@@ -10,6 +11,7 @@ This document explains how to implement the `IMCEngineArtificialIntelligenceDLC`
 package com.example;
 
 import io.github.mcengine.api.artificialintelligence.extension.dlc.IMCEngineArtificialIntelligenceDLC;
+import io.github.mcengine.api.core.MCEngineCoreApi;
 import io.github.mcengine.api.core.extension.logger.MCEngineExtensionLogger;
 import org.bukkit.plugin.Plugin;
 
@@ -31,7 +33,7 @@ public class MyAIDLC implements IMCEngineArtificialIntelligenceDLC {
 
     @Override
     public void setId(String id) {
-        MCEngineApi.setId("example");
+        MCEngineCoreApi.setId("artificialintelligence-example-dlc");
     }
 }
 ```

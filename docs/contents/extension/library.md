@@ -1,6 +1,7 @@
 # AI Library Module Usage Guide
 
 **Path:** `com.example.MyAILibrary.java`
+[`Example Repository`](https://github.com/MCEngine-Extension/artificialintelligence-library-example)
 
 This document explains how to implement the `IMCEngineArtificialIntelligenceLibrary` interface to create an AI backend library for the MCEngine.
 
@@ -10,6 +11,7 @@ This document explains how to implement the `IMCEngineArtificialIntelligenceLibr
 package com.example;
 
 import io.github.mcengine.api.artificialintelligence.extension.library.IMCEngineArtificialIntelligenceLibrary;
+import io.github.mcengine.api.core.MCEngineCoreApi;
 import io.github.mcengine.api.core.extension.logger.MCEngineExtensionLogger;
 import org.bukkit.plugin.Plugin;
 
@@ -31,7 +33,7 @@ public class MyAILibrary implements IMCEngineArtificialIntelligenceLibrary {
 
     @Override
     public void setId(String id) {
-        MCEngineApi.setId("example");
+        MCEngineCoreApi.setId("artificialintelligence-example-library");
     }
 }
 ```
