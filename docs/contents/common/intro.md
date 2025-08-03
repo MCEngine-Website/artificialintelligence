@@ -3,6 +3,8 @@
 Core utilities and shared components for AI functionality in Java.  
 Published to GitHub Packages for easy integration via Maven or Gradle.
 
+[`Repository`](https://github.com/MCEngine-Common/artificialintelligence)
+
 ---
 
 ## 📦 Installation

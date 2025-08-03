@@ -3,6 +3,8 @@
 A lightweight and extensible Java library for AI-related operations.  
 Published on GitHub Packages for easy integration into your Maven or Gradle projects.
 
+[`Repository`](https://github.com/MCEngine-API/artificialintelligence)
+
 ---
 
 ## 📦 Installation
