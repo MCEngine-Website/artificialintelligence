@@ -1,6 +1,6 @@
 # Requirement
 
-Require: MCEngine Artificial Intelligence 2025.0.7-30-1  
+Require: MCEngine Artificial Intelligence (Use the same version as the engine)  
 Place this AddOn in `plugins/MCEngineArtificialIntelligence/extensions/addons/`.  
 Config at `plugins/MCEngineArtificialIntelligence/extensions/addons/configs/MCEngineChatBot/`.
 
