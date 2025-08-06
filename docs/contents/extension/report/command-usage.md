@@ -1,6 +1,6 @@
 # Command Usage
 
 ```
-/report <player> <message>
-/report <player> <platform> <model>
+/ai report <player> <message>
+/ai report <player> <platform> <model>
 ```

@@ -1,4 +1,4 @@
 # Example Command Usage
 ```
-/chatbot openai gpt-4
+/ai chatbot openai gpt-4
 ```

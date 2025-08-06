@@ -6,7 +6,7 @@
 
 (Token is encrypted before saving)
 ```
-/ai set token {platform} <token>
+/ai default set token {platform} <token>
 ```
 
 ## Additional info for set token

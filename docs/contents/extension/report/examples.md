@@ -1,6 +1,6 @@
 # Examples
 
 ```
-/report Steve He is cheating
-/report Steve openai gpt-4
+/ai report Steve He is cheating
+/ai report Steve openai gpt-4
 ```

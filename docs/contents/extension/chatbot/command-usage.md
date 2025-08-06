@@ -1,4 +1,4 @@
 # Command Usage
 ```
-/chatbot {platform} {model}
+/ai chatbot {platform} {model}
 ```

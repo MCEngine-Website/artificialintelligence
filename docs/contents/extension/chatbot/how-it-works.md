@@ -2,7 +2,7 @@
 
 ## Player Command:
 ```
-/chatbot openai gpt-4
+/ai chatbot openai gpt-4
 ```
 
 This command starts the player chat listener.  
