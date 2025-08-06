@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MCEngine AI API Usage</title>
+  <title>MCEngine AI Placeholder</title>
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="https://mcengine-website.github.io/templates/v1/css/dashboard/style.css" />
@@ -22,7 +22,7 @@
       <!-- Main content box -->
       <main class="main-content">
         <div class="content-header">
-          <h1>MCEngine AI API Usage</h1>
+          <h1>MCEngine AI Placeholders</h1>
         </div>
         <div class="content-body" id="markdown-container">
           <!-- Markdown sections loaded here -->
@@ -34,33 +34,28 @@
   </div>
 
   <script>
-    fetch('../partials/sidebar.html')
+    fetch('../../partials/sidebar.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('sidebar').innerHTML = html;
       });
 
-    fetch('../partials/api-sidebar.html')
+    fetch('../../partials/api-sidebar.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('addition-content-sidebar').innerHTML = html;
       });
 
     // Load markdown files from /contents/ai-api/
-    loadMarkdownFiles('../contents/api/', 'markdown-container', [
-      'intro.md',
-      'registerModel.md',
-      'getAi.md',
-      'getAiAll.md',
-      'runBotTask.md',
-      'setWaiting.md',
-      'checkWaitingPlayer.md',
-      'getCompletionContent.md',
-      'getTotalTokenUsage.md',
-      'getResponseServerToken.md',
-      'getResponseCustomToken.md',
-      'initializeFunctionCallingLoader.md',
-      'getMessageMatch.md'
+    loadMarkdownFiles('../../contents/api/placeholders/', 'markdown-container', [
+      'examples.md',
+      'example_nearby_entity_count.md',
+      'example_nearby_entity_detail.md',
+      'offset.md',
+      'player.md',
+      'server.md',
+      'timezone.md',
+      'world.md'
     ]);
   </script>
 </body>
